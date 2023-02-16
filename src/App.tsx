@@ -1,7 +1,5 @@
-import OrderPage from './features/Order/OrderPage';
+import MenuPage from "./features/Menu/MenuPage";
 
 export default function App() {
-  return (
-    <OrderPage />
-  )
+	return <MenuPage />;
 }

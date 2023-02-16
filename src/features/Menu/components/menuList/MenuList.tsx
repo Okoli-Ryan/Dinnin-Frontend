@@ -1,9 +1,9 @@
-import './orderList.css';
+import "./MenuList.css";
 
-import { Input, Tabs } from 'antd';
-import { BsSearch } from 'react-icons/bs';
+import { Input, Tabs } from "antd";
+import { BsSearch } from "react-icons/bs";
 
-import { Dummy_MenuTabItems } from './OrderList.dummy';
+import { Dummy_MenuTabItems } from "./MenuList.dummy";
 
 export default function OrderList() {
 	return (
@@ -15,7 +15,7 @@ export default function OrderList() {
 					prefix={<BsSearch color="#12121299" />}
 				/>
 			</div>
-				<Tabs defaultActiveKey="1" items={Dummy_MenuTabItems} className='mb-12'/>
+			<Tabs defaultActiveKey="1" items={Dummy_MenuTabItems} className="mb-12" />
 		</>
 	);
 }
