@@ -1,0 +1,24 @@
+.ant-tabs-top > .ant-tabs-nav {
+	border-bottom: 0px solid #12121233 !important;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+	font-weight: 600 !important;
+	color: black;
+}
+
+.ant-tabs-nav{
+    @apply !top-14 !sticky z-10 !bg-white
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab{
+    margin: 0 12px;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab:first-child{
+    margin: 0 16px !important
+}
+
+.ant-input {
+    @apply !pl-2 bg-[#F2F4F5]
+}
