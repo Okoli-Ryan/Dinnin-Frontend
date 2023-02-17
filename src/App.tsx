@@ -1,5 +1,5 @@
-import CartModal from './features/Cart/CartModal';
+import MenuPage from './features/Menu/MenuPage';
 
 export default function App() {
-	return <CartModal />;
+	return <MenuPage />;
 }

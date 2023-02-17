@@ -8,12 +8,12 @@ export default function CartButton() {
 			<Button
 				shape="round"
 				block
-                size='large'
-				className=" text-[#B5B5B5] bg-[#E3E5E5] font-semibold"
+				size="large"
+				className=" text-white bg-[#E3E5E5] font-semibold"
 				type="primary"
 				icon={
-					<span className='top-[10px] left-5 absolute'>
-						<BsFillCartFill color="#CBCBCB" size={18} />
+					<span className="top-[10px] left-5 absolute">
+						<BsFillCartFill color="white" size={18} />
 					</span>
 				}>
 				View Cart
