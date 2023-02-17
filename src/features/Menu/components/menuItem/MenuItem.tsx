@@ -1,5 +1,6 @@
 import { AiOutlinePlus } from 'react-icons/ai';
 
+import FoodImage from "../../../../components/Image/FoodImage";
 import { IMenuItem } from '../../../../domain/MenuItem';
 
 interface IOrderMenuItem extends IMenuItem {}
@@ -17,14 +18,12 @@ export default function OrderMenuItem({
 				<p className="text-sm text-text_primary">{description}</p>
 				<p className="font-bold mt-2">$ {price}</p>
 			</div>
-			{/* <div className="h-full flex items-center justify-center bg-red-300"> */}
-				<div className="relative flex self-center">
-					<img src={imageSrc} className="object-contain max-w-[4rem] max-h-[4rem]" />
-					<span className="absolute shadow-lg bottom-0 right-0 w-6 h-6 flex justify-center items-center rounded-full bg-white">
-						<AiOutlinePlus size={14} color="#121212" />
-					</span>
-				</div>
-			{/* </div> */}
+			<div className="relative flex self-center">
+				<FoodImage src={imageSrc} />
+				<span className="absolute shadow-lg bottom-0 right-0 w-6 h-6 flex justify-center items-center rounded-full bg-white">
+					<AiOutlinePlus size={14} color="#121212" />
+				</span>
+			</div>
 		</div>
 	);
 }

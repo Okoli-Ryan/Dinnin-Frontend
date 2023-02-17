@@ -6,11 +6,12 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				['text_primary']: "#12121299",
+				["text_primary"]: "#12121299",
+				primary: "#F2003C",
 			},
-            fontFamily: {
-                'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
-              },
+			fontFamily: {
+				sans: ["Satoshi", ...defaultTheme.fontFamily.sans],
+			},
 		},
 	},
 	plugins: [],

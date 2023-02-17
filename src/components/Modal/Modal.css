@@ -1,0 +1,16 @@
+.fullscreen-modal {
+    @apply !w-full max-w-full top-0
+}
+
+.fullscreen-modal .ant-modal-header {
+    @apply sticky top-0 bg-white z-10 rounded-none
+}
+
+.fullscreen-modal .ant-modal-content {
+    @apply !p-0 !w-screen !h-screen !rounded-none
+    overflow-auto
+}
+
+.ant-modal-wrap {
+    @apply overflow-hidden
+}
