@@ -1,23 +1,17 @@
 import { CartItem } from '../../../../domain/CartItem';
 
 const cartListArray = [
-	"Food 1",
-	"Food 2",
-	"Food 3",
-	"Food 4",
-	"Food 1",
-	"Food 2",
-	"Food 3",
-	"Food 4",
-	"Food 1",
-	"Food 2",
-	"Food 3",
-	"Food 4",
+	{ menuItemName: "Food 1", category: "Category 1" },
+	{ menuItemName: "Food 2", category: "Category 2" },
+	{ menuItemName: "Food 3", category: "Category 1" },
+	{ menuItemName: "Food 4", category: "Category 2" },
+	{ menuItemName: "Food 5", category: "Category 2" },
 ];
 export const Dummy__CartList = cartListArray.map(
 	(el, id) =>
 		new CartItem({
 			id: `${id}`,
-			menuItemName: el,
+			menuItemName: el.menuItemName,
+			category: el.category,
 		})
 );

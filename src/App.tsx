@@ -1,5 +1,5 @@
-import CartModal from "./features/Cart/CartModal";
+import Checkout from './features/Checkout';
 
 export default function App() {
-	return <CartModal />;
+	return <Checkout />;
 }

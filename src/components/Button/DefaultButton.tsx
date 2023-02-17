@@ -12,7 +12,7 @@ export default function DefaultButton({ children, className, ...props }: IButton
 		<Button
 			shape="round"
 			size="large"
-			className={`${className} bg-primary active:text-text_primary `}
+			className={`${className} font-semibold bg-primary active:text-text_primary `}
 			{...props}>
 			{children}
 		</Button>
