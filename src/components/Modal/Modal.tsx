@@ -35,13 +35,13 @@ export default function Modal({
 	);
 }
 
-function FullScreen({ header, isOpen, onCancel, children }: IModal) {
+function FullScreen({ header, isOpen, onCancel, wrapClassName, children }: IModal) {
 	return (
 		<Modal
 			header={header}
 			isOpen={isOpen}
 			onCancel={onCancel}
-			wrapClassName="cart-modal"
+			wrapClassName={wrapClassName}
 			className="fullscreen-modal">
 			{children}
 		</Modal>

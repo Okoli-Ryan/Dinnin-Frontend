@@ -6,6 +6,14 @@ const cartListArray = [
 	{ menuItemName: "Food 3", category: "Category 1" },
 	{ menuItemName: "Food 4", category: "Category 2" },
 	{ menuItemName: "Food 5", category: "Category 2" },
+	{ menuItemName: "Food 2", category: "Category 2" },
+	{ menuItemName: "Food 3", category: "Category 1" },
+	{ menuItemName: "Food 4", category: "Category 2" },
+	{ menuItemName: "Food 5", category: "Category 2" },
+	{ menuItemName: "Food 2", category: "Category 2" },
+	{ menuItemName: "Food 3", category: "Category 1" },
+	{ menuItemName: "Food 4", category: "Category 2" },
+	{ menuItemName: "Food 5", category: "Category 2" },
 ];
 export const Dummy__CartList = cartListArray.map(
 	(el, id) =>

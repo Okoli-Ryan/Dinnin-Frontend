@@ -1,16 +1,25 @@
+import './CartModal.css';
+
 import { RxCross1 } from 'react-icons/rx';
 
 import AppAdvert from '../../components/AppAdvert';
+import Button from '../../components/Button';
 import Modal from '../../components/Modal';
-import CartDeleteModal from './components/cartDeleteModal';
 import CartList from './components/cartList';
 
 export default function CartModal() {
 	return (
-		<Modal.FullScreen isOpen header={<CartModalHeader />}>
+		<Modal.FullScreen
+			isOpen
+			header={<CartModalHeader />}
+			className="relative pb-12"
+			wrapClassName="!overflow-hidden cart-modal">
 			<AppAdvert />
 			<CartList />
-			<CartDeleteModal />
+			<div className="fixed bottom-4 w-full flex justify-center px-8">
+				<Button className="text-white w-full">Proceed to Checkout</Button>
+			</div>
+			{/* <CartDeleteModal /> */}
 		</Modal.FullScreen>
 	);
 }
