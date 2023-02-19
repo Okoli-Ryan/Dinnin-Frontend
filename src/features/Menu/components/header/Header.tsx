@@ -22,14 +22,13 @@ export default function Header() {
 					<span className="text-sm">4.2</span>
 					<span className="text-[#F2003C] text-sm">(252)</span>
 				</p>
-				<p className='text-sm'>234 Palm Springs, NY</p>
+				<p className="text-sm">234 Palm Springs, NY</p>
 				<p className="flex items-center">
 					<span className="text-[#37863E] font-bold text-sm">Open now</span>
 					<BsDot className="text-[#12121299]" size={18} />
-					<span className="font-light font-sm">Closes at 8:00 PM</span>
+					<span className="font-light text-sm">Closes at 8:00 PM</span>
 				</p>
 			</div>
-			
 		</div>
 	);
 }

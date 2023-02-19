@@ -6,7 +6,7 @@ export interface IMenuItem extends IBaseModel {
 	description?: string;
 	category?: string;
 	price?: number;
-	imageSrc?: any;
+	imageUrl?: any;
 }
 
 export class MenuItem extends BaseModel {
@@ -14,12 +14,12 @@ export class MenuItem extends BaseModel {
 	description: string;
 	price: number;
 	category?: string;
-	imageSrc?: any;
+	imageUrl?: any;
 
 	constructor(props: IMenuItem) {
 		super(props);
 		this.category = props?.category;
-		this.imageSrc = props.imageSrc || DummyMenuItemImage;
+		this.imageUrl = props.imageUrl || DummyMenuItemImage;
 		this.description =
 			props.description || "Random food quote random food quote Random food quote";
 		this.price = props.price || 69.69;
