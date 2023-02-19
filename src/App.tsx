@@ -1,5 +1,5 @@
-import MenuPage from './features/Menu/MenuPage';
+import RoutesConfig from "./features/Routes/Routes";
 
 export default function App() {
-	return <MenuPage />;
+	return <RoutesConfig />;
 }
