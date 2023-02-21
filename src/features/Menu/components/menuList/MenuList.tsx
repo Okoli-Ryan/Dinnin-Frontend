@@ -4,12 +4,11 @@ import { Input, Tabs } from 'antd';
 import { BsSearch } from 'react-icons/bs';
 
 import { useAppSelector } from '../../../../store';
-import { ParseMenuCategories } from './utils/Utils';
+import { ParseMenuCategories } from "./Utils";
 
-export default function OrderList() {
-
-    const { categories =[] } = useAppSelector(state => state.restaurant)
-    const categoryTabs = ParseMenuCategories(categories)
+export default function MenuList() {
+	const { categories = [] } = useAppSelector((state) => state.restaurant);
+	const categoryTabs = ParseMenuCategories(categories);
 
 	return (
 		<>

@@ -1,4 +1,4 @@
-import { ICartItem } from "../../../../domain/CartItem";
+import { CartItem, ICartItem } from "../../../../domain/CartItem";
 import { dispatch, useAppSelector } from "../../../../store";
 
 export const useMenuItem = (menuItem: ICartItem) => {
@@ -7,7 +7,7 @@ export const useMenuItem = (menuItem: ICartItem) => {
 	const isSelected = cart[menuItem.id];
 
 	function selectMenuItem() {
-		dispatch.cart.select(menuItem);
+		dispatch.cart.select(new CartItem(menuItem));
 	}
 
 	return { isSelected, selectMenuItem };

@@ -1,14 +1,24 @@
-export default function CheckoutItem() {
+import { ICartItem } from "../../../../domain/CartItem";
+
+interface ICheckoutItem {
+	index: number;
+	category: string;
+	menuItems: ICartItem[];
+}
+
+export default function CheckoutItem({ category, index, menuItems }: ICheckoutItem) {
 	return (
 		<div className="flex justify-between mb-4">
 			<div className="flex gap-4">
-				<span>1</span>
+				<span>{index}</span>
 				<div className="flex flex-col gap-2">
-					<p className="font-bold text-text_primary_bold">Main Dishes</p>
+					<p className="font-bold text-text_primary_bold">{category}</p>
 					<div className="flex flex-col gap-1">
-						<p className="text-text_primary text-sm">Danish Pork BBQ RIBS x1</p>
-						<p className="text-text_primary text-sm">Bacalao Frito x1</p>
-						<p className="text-text_primary text-sm">Salmon Chimichurri x1</p>
+						{menuItems.map((menuItem) => (
+							<p className="text-text_primary text-sm">
+								{menuItem.menuItemName} x{menuItem.unit}
+							</p>
+						))}
 					</div>
 				</div>
 			</div>

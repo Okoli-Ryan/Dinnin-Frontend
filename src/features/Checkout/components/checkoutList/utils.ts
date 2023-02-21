@@ -1,10 +1,12 @@
-import { CartItem } from '../../../../domain/CartItem';
+import { ICartItem } from "../../../../domain/CartItem";
 
-export const ParseCheckoutList = (cartItems: Array<CartItem>) => {
-	let result: Record<string, CartItem[]> = {};
+export const ParseCheckoutList = (cartItems: Record<string, ICartItem>) => {
+	let result: Record<string, ICartItem[]> = {};
 
-	cartItems.forEach((item) => {
-		const category = item.category!;
+	const cartItemsArray = Object.values(cartItems);
+
+	cartItemsArray.forEach((item) => {
+		const category = item.categoryName;
 		if (result[category]) {
 			result[category].push(item);
 		} else {
@@ -12,5 +14,5 @@ export const ParseCheckoutList = (cartItems: Array<CartItem>) => {
 		}
 	});
 
-	return Object.values(result);
+	return Object.entries(result);
 };

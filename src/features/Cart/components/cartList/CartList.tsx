@@ -1,12 +1,16 @@
 import List from '../../../../components/List';
-import CartItem from '../cartItem';
-import { Dummy__CartList } from './CartList.dummy';
+import { useAppSelector } from "../../../../store";
+import CartItem from "../cartItem";
 
 export default function CartList() {
+
+    const cart = useAppSelector((state) => state.cart);
+	const cartItems = Object.values(cart);
+
 	return (
 		<List
-			data={Dummy__CartList}
-			renderItem={(el) => <CartItem />}
+			data={cartItems}
+			renderItem={(cartItem) => <CartItem {...cartItem} />}
 			header={<h3 className="mx-4 font-bold text-lg">Items</h3>}
 		/>
 	);

@@ -16,7 +16,7 @@ export default function LoadingModal({ isLoading = false }: ILoadingModal) {
 			isOpen={loading || isLoading}
 			wrapClassName="h-screen w-screen overflow-hidden"
 			className="flex justify-center items-center">
-			<Spin indicator={<CgSpinner className="text-primary" />} />
+			<Spin indicator={<CgSpinner size={24} className="text-primary" />} />
 		</Modal.FullScreen>
 	);
 }

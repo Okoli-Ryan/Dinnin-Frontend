@@ -25,6 +25,22 @@ export const cart = createModel<RootModel>()({
 				[payload.id]: payload,
 			};
 		},
+		increaseUnit(state, menuItemId: string) {
+			if (state[menuItemId]) {
+				const newState = { ...state };
+				newState[menuItemId].unit += 1;
+
+				return newState;
+			}
+		},
+		decreaseUnit(state, menuItemId: string) {
+			if (state[menuItemId] && state[menuItemId].unit > 0) {
+				const newState = { ...state };
+				newState[menuItemId].unit -= 1;
+
+				return newState;
+			}
+		},
 	},
 	// effects: (dispatch) => ({
 	// 	async getRestaurant(payload: IGetRestaurantPayload, rootState) {
