@@ -1,6 +1,8 @@
 import { IMenuItem, MenuItem } from "./MenuItem";
 
-export interface ICartItem extends IMenuItem {}
+export interface ICartItem extends IMenuItem {
+	unit: number;
+}
 
 export class CartItem extends MenuItem {
 	unit: number;

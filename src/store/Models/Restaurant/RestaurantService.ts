@@ -1,15 +1,15 @@
 import { createModel } from "@rematch/core";
 
-import { RootModel, WithAbortSignal } from "../";
+import { RootModel } from "../";
 import { IRestaurant } from "../../../domain/Restaurant";
 import { RestaurantRepository } from "./RestaurantRepository";
 
 const initState = {} as IRestaurant;
 
-type IGetRestaurantPayload = WithAbortSignal<{
+type IGetRestaurantPayload = {
 	slug: string;
 	tableId?: string;
-}>;
+};
 
 export const restaurant = createModel<RootModel>()({
 	state: initState,
@@ -23,12 +23,12 @@ export const restaurant = createModel<RootModel>()({
 	},
 	effects: (dispatch) => ({
 		async getRestaurant(payload: IGetRestaurantPayload, rootState) {
-			const { slug, signal } = payload;
+			const { slug } = payload;
 
 			console.log(payload);
 
 			try {
-				const data = await RestaurantRepository.getRestaurantDetails(slug, signal);
+				const data = await RestaurantRepository.getRestaurantDetails(slug);
 				console.log("fetched");
 				dispatch.restaurant.set(data);
 			} catch (error) {

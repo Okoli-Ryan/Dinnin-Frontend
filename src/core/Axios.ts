@@ -1,9 +1,4 @@
-import axios, {
-	AxiosRequestConfig,
-	AxiosRequestHeaders,
-	GenericAbortSignal,
-	InternalAxiosRequestConfig,
-} from "axios";
+import axios, { AxiosRequestConfig, AxiosRequestHeaders, InternalAxiosRequestConfig } from "axios";
 import { setupCache } from "axios-cache-adapter";
 
 import { BASE_URL, X_API_KEY } from "./Constants";
@@ -63,7 +58,7 @@ export const api = {
 		const config = data ? { headers: options, data } : { headers: options };
 		return axios.delete(options?.fullPath ? url : BASE_URL + url, config);
 	},
-	get: async (url: string, params: any = {}, signal: GenericAbortSignal, options?: IOptions) => {
+	get: async (url: string, params: any = {}, options?: IOptions) => {
 		params = params
 			? params instanceof Object && !Object.keys(params).length
 				? null
@@ -72,7 +67,6 @@ export const api = {
 		// const config = params ? { headers: options, params } : { headers: options };
 		const config = {
 			headers: options,
-			signal,
 			params,
 		} as AxiosRequestConfig;
 		return axios.get(options?.fullPath ? url : BASE_URL + url, config);

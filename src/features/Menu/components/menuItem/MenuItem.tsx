@@ -1,22 +1,35 @@
 import { AiOutlinePlus } from 'react-icons/ai';
+import { BsCheckCircleFill } from "react-icons/bs";
 
 import FoodImage from "../../../../components/Image/FoodImage";
-import { IMenuItem } from '../../../../domain/MenuItem';
+import { ICartItem } from "../../../../domain/CartItem";
+import { IMenuItem as IMenuItemClass } from "../../../../domain/MenuItem";
+import { useMenuItem } from "./useMenuItem";
 
-interface IOrderMenuItem extends IMenuItem {}
+interface IMenuItem extends IMenuItemClass {}
 
-export default function OrderMenuItem({ imageUrl, description, menuItemName, price }: IOrderMenuItem) {
+export default function MenuItem(props: ICartItem) {
+	const { selectMenuItem, isSelected } = useMenuItem(props);
+
 	return (
-		<div className="flex justify-between px-4 gap-4 mb-4 border-b-[1px] pb-4">
-			<div className="flex flex-col gap-1">
-				<h5 className="font-bold">{menuItemName}</h5>
-				<p className="text-sm text-text_primary">{description}</p>
-				<p className="font-bold mt-2">$ {price}</p>
+		<div
+			className={`flex justify-between px-4 gap-4 mb-4 border-b-[1px] py-3 ${
+				isSelected ? "bg-primary/10" : "bg-white"
+			}`}
+			onClick={selectMenuItem}>
+			<div className="flex flex-col gap-1 ">
+				<h5 className="font-bold">{props.menuItemName}</h5>
+				<p className="text-sm text-text_primary">{props.description}</p>
+				<p className="font-bold mt-2">NGN {props.price}</p>
 			</div>
 			<div className="relative flex self-center">
-				{imageUrl && <FoodImage src={imageUrl} />}
+				{props.imageUrl && <FoodImage src={props.imageUrl} />}
 				<span className="absolute shadow-lg bottom-0 right-0 w-6 h-6 flex justify-center items-center rounded-full bg-white">
-					<AiOutlinePlus size={14} color="#121212" />
+					{isSelected ? (
+						<BsCheckCircleFill size={14} className="text-primary" />
+					) : (
+						<AiOutlinePlus size={14} color="#121212" />
+					)}
 				</span>
 			</div>
 		</div>

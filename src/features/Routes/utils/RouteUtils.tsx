@@ -32,8 +32,8 @@ export const AppRoutes: Array<IAppRoute> = [
 		Component: loadModules("Checkout"),
 		path: "/checkout",
 	},
-	// {
-	// 	Component: loadModules("Menu"),
-	// 	path: "/menu",
-	// },
+	{
+		Component: loadModules("Menu"),
+		path: "/menu",
+	},
 ];

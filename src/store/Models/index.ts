@@ -1,13 +1,11 @@
-import { GenericAbortSignal } from "axios";
-
 import { Models } from "@rematch/core";
 
-import { restaurant } from "./Restaurant/RestaurantService";
+import { cart } from "./Cart";
+import { restaurant } from "./Restaurant";
 
 export interface RootModel extends Models<RootModel> {
 	restaurant: typeof restaurant;
+	cart: typeof cart;
 }
 
-export type WithAbortSignal<T> = T & { signal: GenericAbortSignal };
-
-export const models: RootModel = { restaurant };
+export const models: RootModel = { restaurant, cart };
