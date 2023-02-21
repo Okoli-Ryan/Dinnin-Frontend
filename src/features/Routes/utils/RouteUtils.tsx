@@ -5,13 +5,17 @@ import LoadingScreen from '../../../components/LoadingScreen';
 
 const loadModules = (link: string) => lazy(() => import(/* @vite-ignore */`../../${link}`));
 
-export const generateRoutes = ({ path, Component }: IAppRoute, i: any): ReactElement => {
+export const generateRoutes = (
+	{ path, Component }: IAppRoute,
+	i: any,
+	prefix?: string
+): ReactElement => {
 	return (
 		<Route
 			key={i}
-			path={path}
+			path={prefix + path}
 			element={
-				<Suspense fallback={<LoadingScreen/>}>
+				<Suspense fallback={<LoadingScreen />}>
 					<Component />
 				</Suspense>
 			}
@@ -28,8 +32,8 @@ export const AppRoutes: Array<IAppRoute> = [
 		Component: loadModules("Checkout"),
 		path: "/checkout",
 	},
-	{
-		Component: loadModules("Menu"),
-		path: "/menu",
-	},
+	// {
+	// 	Component: loadModules("Menu"),
+	// 	path: "/menu",
+	// },
 ];

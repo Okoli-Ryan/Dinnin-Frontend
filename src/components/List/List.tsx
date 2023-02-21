@@ -3,7 +3,7 @@ import { List as AntDList, ListProps } from 'antd';
 interface IListProps<T> extends ListProps<T> {
 	direction?: "vertical" | "horizontal";
 	data: Array<T>;
-	renderItem: (item?: T, index?: number) => React.ReactNode;
+	renderItem: (item: T, index?: number) => JSX.Element;
 }
 
 export default function List<T>({

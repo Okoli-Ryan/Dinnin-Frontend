@@ -1,0 +1,120 @@
+{
+	"id": "d0ca0801-0225-40ff-3075-08dafbc4dfd5",
+	"activeStatus": true,
+	"createdAt": "2023-01-21T15:33:31.156732",
+	"updatedAt": "2023-01-21T15:33:31.1567337",
+	"restaurantName": "Test Res 1",
+	"slug": "test",
+	"description": "Test restuarant",
+	"xCoordinate": 70061357.55588,
+	"yCoordinate": 76904025.30508,
+	"address": "Agungi",
+	"contactPhoneNumber": "+234908299948",
+	"contactEmail": "okoliryan50@gmail.com",
+	"logoUrl": "https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg",
+	"country": "Nigeria",
+	"state": "Depression",
+	"city": "Lagos",
+	"categories": [
+		{
+			"categoryName": "Main Food",
+			"restaurantId": "d0ca0801-0225-40ff-3075-08dafbc4dfd5",
+			"menuItems": [
+				{
+					"menuItemName": "Fried Rice",
+					"price": 230,
+					"menuCategoryId": "41bb5d48-ab8f-484d-73a5-08db1295e7eb",
+					"imageUrl": null,
+					"id": "b274c0b4-e7ef-48ea-e8f4-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:27:11.8943571",
+					"updatedAt": "2023-02-19T16:27:11.8943579"
+				},
+				{
+					"menuItemName": "Jollof Rice",
+					"price": 230,
+					"menuCategoryId": "41bb5d48-ab8f-484d-73a5-08db1295e7eb",
+					"imageUrl": null,
+					"id": "d679196d-6e79-4777-e8f5-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:27:20.2915358",
+					"updatedAt": "2023-02-19T16:27:20.291538"
+				},
+				{
+					"menuItemName": "Beans",
+					"price": 210,
+					"menuCategoryId": "41bb5d48-ab8f-484d-73a5-08db1295e7eb",
+					"imageUrl": null,
+					"id": "d3989603-8910-45a7-e8f6-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:27:33.285108",
+					"updatedAt": "2023-02-19T16:27:33.2851088"
+				},
+				{
+					"menuItemName": "Carribean Rice",
+					"price": 1005,
+					"menuCategoryId": "41bb5d48-ab8f-484d-73a5-08db1295e7eb",
+					"imageUrl": null,
+					"id": "921fbe84-40e1-4c87-e8f7-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:28:11.7137099",
+					"updatedAt": "2023-02-19T16:28:11.7137117"
+				}
+			],
+			"id": "41bb5d48-ab8f-484d-73a5-08db1295e7eb",
+			"activeStatus": true,
+			"createdAt": "2023-02-19T16:25:20.7724061",
+			"updatedAt": "2023-02-19T16:25:20.7724102"
+		},
+		{
+			"categoryName": "Drinks",
+			"restaurantId": "d0ca0801-0225-40ff-3075-08dafbc4dfd5",
+			"menuItems": [
+				{
+					"menuItemName": "Cognac",
+					"price": 260,
+					"menuCategoryId": "63c5cc81-a13e-4d79-73a6-08db1295e7eb",
+					"imageUrl": null,
+					"id": "8ccfd964-a7af-4ff1-e8f8-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:28:42.5146068",
+					"updatedAt": "2023-02-19T16:28:42.5146078"
+				},
+				{
+					"menuItemName": "Pink Berry",
+					"price": 375,
+					"menuCategoryId": "63c5cc81-a13e-4d79-73a6-08db1295e7eb",
+					"imageUrl": null,
+					"id": "11d81cb0-5c0c-4c99-e8f9-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:28:57.0636898",
+					"updatedAt": "2023-02-19T16:28:57.0636924"
+				},
+				{
+					"menuItemName": "Rubis",
+					"price": 195.5,
+					"menuCategoryId": "63c5cc81-a13e-4d79-73a6-08db1295e7eb",
+					"imageUrl": null,
+					"id": "eaa53d92-c5ed-4bd9-e8fa-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:29:15.7664543",
+					"updatedAt": "2023-02-19T16:29:15.7664566"
+				},
+				{
+					"menuItemName": "Soft drinks",
+					"price": 150,
+					"menuCategoryId": "63c5cc81-a13e-4d79-73a6-08db1295e7eb",
+					"imageUrl": null,
+					"id": "e0d5da39-e7dc-44ce-e8fb-08db12962771",
+					"activeStatus": true,
+					"createdAt": "2023-02-19T16:29:46.1645536",
+					"updatedAt": "2023-02-19T16:29:46.164555"
+				}
+			],
+			"id": "63c5cc81-a13e-4d79-73a6-08db1295e7eb",
+			"activeStatus": true,
+			"createdAt": "2023-02-19T16:25:56.8245555",
+			"updatedAt": "2023-02-19T16:25:56.8245574"
+		}
+	]
+}

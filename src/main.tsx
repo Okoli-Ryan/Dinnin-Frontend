@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 		<BrowserRouter>
 			<Provider store={store}>
 				<ConfigProvider theme={customTheme}>
+					{/* <LoadingModal /> */}
 					<App />
 				</ConfigProvider>
 			</Provider>

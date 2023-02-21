@@ -1,11 +1,16 @@
-import "./MenuList.css";
+import './MenuList.css';
 
-import { Input, Tabs } from "antd";
-import { BsSearch } from "react-icons/bs";
+import { Input, Tabs } from 'antd';
+import { BsSearch } from 'react-icons/bs';
 
-import { Dummy_MenuTabItems } from "./MenuList.dummy";
+import { useAppSelector } from '../../../../store';
+import { ParseMenuCategories } from './utils/Utils';
 
 export default function OrderList() {
+
+    const { categories =[] } = useAppSelector(state => state.restaurant)
+    const categoryTabs = ParseMenuCategories(categories)
+
 	return (
 		<>
 			<div className="flex justify-between p-4 sticky top-0 bg-white z-10 ">
@@ -15,7 +20,7 @@ export default function OrderList() {
 					prefix={<BsSearch color="#12121299" />}
 				/>
 			</div>
-			<Tabs defaultActiveKey="1" items={Dummy_MenuTabItems} className="mb-12" />
+			<Tabs defaultActiveKey="1" items={categoryTabs} className="mb-12" />
 		</>
 	);
 }

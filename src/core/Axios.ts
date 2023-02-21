@@ -1,8 +1,12 @@
-import axiosInstance, { AxiosRequestHeaders, InternalAxiosRequestConfig } from "axios";
+import axios, {
+	AxiosRequestConfig,
+	AxiosRequestHeaders,
+	GenericAbortSignal,
+	InternalAxiosRequestConfig,
+} from "axios";
 import { setupCache } from "axios-cache-adapter";
 
 import { BASE_URL, X_API_KEY } from "./Constants";
-import { ResponseCodes } from "./ResponseCodes";
 
 interface IResponse {
 	responseCode: string;
@@ -15,9 +19,9 @@ const cache = setupCache({
 	maxAge: 0,
 });
 
-const axios = axiosInstance.create({
-	adapter: cache.adapter,
-});
+// const axios = axiosInstance.create({
+// adapter: cache.adapter,
+// });
 
 function handleRequest(req: InternalAxiosRequestConfig) {
 	req.headers["Content-Type"] = "application/json";
@@ -34,16 +38,14 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
 	(res) => {
-		if (res.data?.ResponseCodes !== ResponseCodes.SUCCESS) {
-			return Promise.reject(res.data);
-		}
-
 		return res.data;
 	},
 	(err) => Promise.reject(err)
 );
 
-type IOptions = AxiosRequestHeaders & { fullPath: string };
+type IOptions = AxiosRequestHeaders & { fullPath?: string };
+
+export default axios;
 
 export const api = {
 	post: async (url: string, data?: any, options?: IOptions) =>
@@ -61,13 +63,18 @@ export const api = {
 		const config = data ? { headers: options, data } : { headers: options };
 		return axios.delete(options?.fullPath ? url : BASE_URL + url, config);
 	},
-	get: async (url: string, params?: any, options?: IOptions) => {
+	get: async (url: string, params: any = {}, signal: GenericAbortSignal, options?: IOptions) => {
 		params = params
 			? params instanceof Object && !Object.keys(params).length
 				? null
 				: params
 			: null;
-		const config = params ? { headers: options, params } : { headers: options };
+		// const config = params ? { headers: options, params } : { headers: options };
+		const config = {
+			headers: options,
+			signal,
+			params,
+		} as AxiosRequestConfig;
 		return axios.get(options?.fullPath ? url : BASE_URL + url, config);
 	},
 };
