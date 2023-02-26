@@ -25,8 +25,8 @@ export default function CartModal({ isOpen, hideCartModal }: ICartModalProps) {
 			wrapClassName="!overflow-hidden cart-modal">
 			<AppAdvert />
 			<CartList />
-			<div className="fixed bottom-4 w-full flex justify-center px-8">
-				<Button onClick={navigateToCheckout} className="text-white w-full">
+			<div className="fixed flex justify-center w-full px-8 bottom-4">
+				<Button onClick={navigateToCheckout} className="w-full text-white">
 					Proceed to Checkout
 				</Button>
 			</div>
@@ -37,12 +37,12 @@ export default function CartModal({ isOpen, hideCartModal }: ICartModalProps) {
 
 const CartModalHeader = ({ hideCartModal }: { hideCartModal: () => void }) => {
 	return (
-		<div className="p-4 pb-2 flex justify-between items-center">
+		<div className="flex items-center justify-between p-4 pb-2">
 			<span className="flex flex-1" onClick={hideCartModal}>
 				<RxCross1 />
 			</span>
-			<h4 className="font-bold text-text_primary text-center flex-1">Cart</h4>
-			<div className="flex-1 flex"></div>
+			<h4 className="flex-1 font-bold text-center text-text_primary">Cart</h4>
+			<div className="flex flex-1"></div>
 		</div>
 	);
 };

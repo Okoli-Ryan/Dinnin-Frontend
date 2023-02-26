@@ -7,12 +7,20 @@ interface IButton extends ButtonProps {
 	children: React.ReactNode;
 }
 
-export default function DefaultButton({ children, className, ...props }: IButton) {
+export default function DefaultButton({
+	children,
+	type = "primary",
+	className,
+	...props
+}: IButton) {
 	return (
 		<Button
 			shape="round"
 			size="large"
-			className={`${className} font-semibold bg-primary active:text-text_primary `}
+			className={`${className} font-semibold ${
+				type === "primary" ? "text-white bg-primary" : "text-primary"
+			}`}
+			type={type}
 			{...props}>
 			{children}
 		</Button>

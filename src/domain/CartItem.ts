@@ -1,17 +1,17 @@
 import { IMenuItem, MenuItem } from "./MenuItem";
 
 export interface ICartItem extends IMenuItem {
-	unit: number;
+	quantity: number;
 	categoryName: string;
 }
 
 export class CartItem extends MenuItem {
-	unit: number;
+	quantity: number;
 	categoryName: string;
 
 	constructor(props: ICartItem) {
 		super(props);
-		this.unit = 1;
+		this.quantity = 1;
 		this.categoryName = props.categoryName;
 	}
 }

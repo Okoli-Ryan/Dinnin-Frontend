@@ -1,6 +1,3 @@
-import { AiOutlinePlus } from 'react-icons/ai';
-import { BsCheckCircleFill } from "react-icons/bs";
-
 import FoodImage from "../../../../components/Image/FoodImage";
 import { ICartItem } from "../../../../domain/CartItem";
 import { IMenuItem as IMenuItemClass } from "../../../../domain/MenuItem";
@@ -13,7 +10,7 @@ export default function MenuItem(props: ICartItem) {
 
 	return (
 		<div
-			className={`flex justify-between px-4 gap-4 mb-4 border-b-[1px] py-3 ${
+			className={`flex justify-between px-4 gap-4 mb-2 border-b-[1px] py-3 ${
 				isSelected ? "bg-primary/10" : "bg-white"
 			}`}
 			onClick={selectMenuItem}>
@@ -23,14 +20,14 @@ export default function MenuItem(props: ICartItem) {
 				<p className="font-bold mt-2">NGN {props.price}</p>
 			</div>
 			<div className="relative flex self-center">
-				{props.imageUrl && <FoodImage src={props.imageUrl} />}
-				<span className="absolute shadow-lg bottom-0 right-0 w-6 h-6 flex justify-center items-center rounded-full bg-white">
+				<FoodImage src={props.imageUrl} />
+				{/* <span className="absolute shadow-lg bottom-0 right-0 w-6 h-6 flex justify-center items-center rounded-full bg-white">
 					{isSelected ? (
 						<BsCheckCircleFill size={14} className="text-primary" />
 					) : (
 						<AiOutlinePlus size={14} color="#121212" />
 					)}
-				</span>
+				</span> */}
 			</div>
 		</div>
 	);

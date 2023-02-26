@@ -36,4 +36,8 @@ export const AppRoutes: Array<IAppRoute> = [
 		Component: loadModules("Menu"),
 		path: "/menu",
 	},
+	{
+		Component: loadModules("OrderSuccess"),
+		path: "/success",
+	},
 ];

@@ -1,12 +1,12 @@
 export interface ITabItemType {
 	children: React.ReactNode;
-	label: string;
+	label: string | JSX.Element;
 	key: string;
 }
 
 export class TabItemType {
 	children: React.ReactNode;
-	label: string;
+	label: string | JSX.Element;
 	key: string;
 
 	constructor(props: ITabItemType) {

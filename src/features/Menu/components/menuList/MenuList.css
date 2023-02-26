@@ -1,5 +1,6 @@
 .ant-tabs-top > .ant-tabs-nav {
 	border-bottom: 0px solid #12121233 !important;
+    @apply !top-14 !sticky z-10 !bg-white !mb-0
 }
 
 .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
@@ -7,8 +8,9 @@
 	color: black;
 }
 
-.ant-tabs-nav{
-    @apply !top-14 !sticky z-10 !bg-white
+
+.ant-tabs-content-holder{
+    @apply !mb-4
 }
 
 .ant-tabs .ant-tabs-tab.ant-tabs-tab{

@@ -1,8 +1,15 @@
+import DefaultFoodImage from "../../assets/images/DefaultFoodIcon.svg";
+
 interface IFoodImage {
 	src: any;
 	className?: string;
 }
 
 export default function FoodImage({ src, className = "" }: IFoodImage) {
-	return <img src={src} className={`object-contain max-w-[4rem] max-h-[4rem] ${className}`} />;
+	return (
+		<img
+			src={src || DefaultFoodImage}
+			className={`object-contain max-w-[4rem]  ${className}`}
+		/>
+	);
 }

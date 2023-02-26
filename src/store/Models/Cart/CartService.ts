@@ -5,11 +5,6 @@ import { ICartItem } from "../../../domain/CartItem";
 
 const initState = {} as Record<string, ICartItem>;
 
-type IGetRestaurantPayload = {
-	slug: string;
-	tableId?: string;
-};
-
 export const cart = createModel<RootModel>()({
 	state: initState,
 	reducers: {
@@ -25,21 +20,33 @@ export const cart = createModel<RootModel>()({
 				[payload.id]: payload,
 			};
 		},
-		increaseUnit(state, menuItemId: string) {
+		increaseQuantity(state, menuItemId: string) {
 			if (state[menuItemId]) {
 				const newState = { ...state };
-				newState[menuItemId].unit += 1;
+				newState[menuItemId].quantity += 1;
 
 				return newState;
 			}
 		},
-		decreaseUnit(state, menuItemId: string) {
-			if (state[menuItemId] && state[menuItemId].unit > 0) {
-				const newState = { ...state };
-				newState[menuItemId].unit -= 1;
+		removeCartItem(state, menuItemId: string) {
+			const newState = { ...state };
 
+			delete newState[menuItemId];
+			return newState;
+		},
+		decreaseQuantity(state, menuItemId: string) {
+			const newState = { ...state };
+			if (newState[menuItemId].quantity === 1) {
+				delete newState[menuItemId];
 				return newState;
 			}
+
+			newState[menuItemId].quantity -= 1;
+
+			return newState;
+		},
+		clear() {
+			return initState;
 		},
 	},
 	// effects: (dispatch) => ({
