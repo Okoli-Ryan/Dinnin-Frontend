@@ -5,7 +5,8 @@ import CartModal from "../../../Cart";
 import { useCartButton } from './useCartButton';
 
 export default function CartButton() {
-	const { cartItemsCount, showCartModal, hideCartModal, isCartModalOpen } = useCartButton();
+	const { cartItemsCount, showCartModal, hideCartModal, isCartModalOpen, isDisabled } =
+		useCartButton();
 
 	return (
 		<>
@@ -15,6 +16,7 @@ export default function CartButton() {
 					shape="round"
 					block
 					size="large"
+					disabled={isDisabled}
 					onClick={showCartModal}
 					className=" text-white bg-[#E3E5E5] font-semibold"
 					type="primary"
@@ -24,7 +26,10 @@ export default function CartButton() {
 								<BsFillCartFill color="white" size={18} />
 							</span>
 							<span className="top-[10px] right-5 absolute">
-								<p className="w-5 h-5 rounded-full bg-[#c50434] text-xs flex justify-center items-center">
+								<p
+									className={`w-5 h-5 rounded-full ${
+										isDisabled ? "bg-gray-100" : "bg-primary/70"
+									} text-xs flex justify-center items-center`}>
 									{cartItemsCount}
 								</p>
 							</span>

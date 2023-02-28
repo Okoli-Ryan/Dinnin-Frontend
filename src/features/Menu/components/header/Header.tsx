@@ -1,5 +1,3 @@
-import { BsDot } from "react-icons/bs";
-
 import Hero from "../../../../assets/images/Hero.png";
 import { useAppSelector } from "../../../../store";
 
@@ -28,11 +26,11 @@ export default function Header() {
 				<p className="text-sm">
 					{city}, {state}
 				</p>
-				<p className="flex items-center">
+				{/* <p className="flex items-center">
 					<span className="text-[#37863E] font-bold text-sm">Open now</span>
 					<BsDot className="text-[#12121299]" size={18} />
-					{/* <span className="font-light text-sm">Closes at 8:00 PM</span> */}
-				</p>
+					<span className="font-light text-sm">Closes at 8:00 PM</span>
+				</p> */}
 			</div>
 		</div>
 	);

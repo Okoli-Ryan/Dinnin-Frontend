@@ -8,6 +8,8 @@ export const useCartButton = () => {
 	const cartItems = useAppSelector((state) => state.cart);
 	const cartItemsCount = Object.keys(cartItems).length;
 
+	const isDisabled = cartItemsCount === 0;
+
 	function showCartModal() {
 		setIsCartModalOpen(true);
 	}
@@ -16,5 +18,5 @@ export const useCartButton = () => {
 		setIsCartModalOpen(false);
 	}
 
-	return { cartItemsCount, showCartModal, hideCartModal, isCartModalOpen };
+	return { cartItemsCount, showCartModal, hideCartModal, isCartModalOpen, isDisabled };
 };

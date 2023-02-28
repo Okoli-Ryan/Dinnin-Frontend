@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import FoodImage from "../../../../components/Image/FoodImage";
 import { ICartItem } from "../../../../domain/CartItem";
 import { useMenuItem } from "./useMenuItem";
@@ -8,20 +6,20 @@ export default function MenuItem(props: ICartItem & { index: number }) {
 	const { selectMenuItem, isSelected } = useMenuItem(props);
 
 	return (
-		<motion.div
-			transition={{
-				delay: props.index * 0.1,
-				duration: 0.3,
-			}}
-			initial={{
-				x: "100vw",
-				opacity: 0,
-			}}
-			animate={{
-				x: 0,
-				opacity: 1,
-			}}
-			className={`flex justify-between px-4 gap-4 mb-2 border-b-[1px] py-3 ${
+		<div
+			// transition={{
+			// 	delay: props.index * 0.1,
+			// 	duration: 0.3,
+			// }}
+			// initial={{
+			// 	x: "100vw",
+			// 	opacity: 0,
+			// }}
+			// animate={{
+			// 	x: 0,
+			// 	opacity: 1,
+			// }}
+			className={`flex justify-between px-4 gap-4 mb-2 transition-colors duration-200 border-b-[1px] py-3 ${
 				isSelected ? "bg-primary/10" : "bg-white"
 			}`}
 			onClick={selectMenuItem}>
@@ -40,6 +38,6 @@ export default function MenuItem(props: ICartItem & { index: number }) {
 					)}
 				</span> */}
 			</div>
-		</motion.div>
+		</div>
 	);
 }
