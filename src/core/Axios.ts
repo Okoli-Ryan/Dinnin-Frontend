@@ -22,6 +22,7 @@ function handleRequest(req: InternalAxiosRequestConfig) {
 	req.headers["Content-Type"] = "application/json";
 	req.headers.Accept = "application/json";
 	req.headers["x-api-key"] = X_API_KEY;
+	req.withCredentials = true;
 
 	return req;
 }
