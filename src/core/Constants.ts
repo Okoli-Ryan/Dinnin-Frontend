@@ -10,3 +10,5 @@ export const PAYMENT_OPTIONS = [
 	{ value: "Cash", label: "Pay with Cash" },
 	{ value: "POS", label: "POS" },
 ];
+
+const a = 1;
