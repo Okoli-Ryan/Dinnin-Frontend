@@ -1,9 +1,11 @@
-import { lazy, LazyExoticComponent, ReactElement, Suspense } from 'react';
-import { Route } from 'react-router-dom';
+import { lazy, ReactElement } from "react";
+import { Route } from "react-router-dom";
 
-import LoadingScreen from '../../../components/LoadingScreen';
+import Checkout from "../../Checkout";
+import Menu from "../../Menu";
+import OrderSuccess from "../../OrderSuccess";
 
-const loadModules = (link: string) => lazy(() => import(/* @vite-ignore */`../../${link}`));
+const loadModules = (link: string) => lazy(() => import(/* @vite-ignore */ `../../${link}`));
 
 export const generateRoutes = (
 	{ path, Component }: IAppRoute,
@@ -15,29 +17,29 @@ export const generateRoutes = (
 			key={i}
 			path={prefix + path}
 			element={
-				<Suspense fallback={<LoadingScreen />}>
-					<Component />
-				</Suspense>
+				// <Suspense fallback={<LoadingScreen />}>
+			Component
+				// </Suspense>
 			}
 		/>
 	);
 };
 interface IAppRoute {
 	path: string;
-	Component: LazyExoticComponent<any>;
+	Component: React.ReactNode;
 }
 
 export const AppRoutes: Array<IAppRoute> = [
 	{
-		Component: loadModules("Checkout"),
+		Component: <Checkout />,
 		path: "/checkout",
 	},
 	{
-		Component: loadModules("Menu"),
+		Component: <Menu />,
 		path: "/menu",
 	},
 	{
-		Component: loadModules("OrderSuccess"),
+		Component: <OrderSuccess />,
 		path: "/success",
 	},
 ];
