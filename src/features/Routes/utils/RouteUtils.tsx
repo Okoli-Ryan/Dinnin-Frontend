@@ -18,7 +18,7 @@ export const generateRoutes = (
 			path={prefix + path}
 			element={
 				// <Suspense fallback={<LoadingScreen />}>
-			Component
+				Component
 				// </Suspense>
 			}
 		/>
@@ -26,7 +26,7 @@ export const generateRoutes = (
 };
 interface IAppRoute {
 	path: string;
-	Component: React.ReactNode;
+	Component: any;
 }
 
 export const AppRoutes: Array<IAppRoute> = [

@@ -11,8 +11,13 @@ export const ParseMenuCategories = (categories: IMenuCategory[]) =>
 				children: (
 					<List
 						data={category.menuItems}
-						renderItem={(item) => (
-							<MenuItem {...item} quantity={1} categoryName={category.categoryName} />
+						renderItem={(item, index) => (
+							<MenuItem
+								{...item}
+								quantity={1}
+								categoryName={category.categoryName}
+								index={index!}
+							/>
 						)}
 					/>
 				),

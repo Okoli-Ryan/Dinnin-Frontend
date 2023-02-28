@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from './App';
 import { customTheme } from './core/Theme';
+import ErrorModal from "./features/ErrorModal";
 import store from "./store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -14,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<BrowserRouter>
 		<Provider store={store}>
 			<ConfigProvider theme={customTheme}>
-				{/* <LoadingModal /> */}
+				<ErrorModal />
 				<App />
 			</ConfigProvider>
 		</Provider>

@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { PersistGate } from "redux-persist/lib/integration/react";
 
 import { getPersistor } from "@rematch/persist";
@@ -9,7 +10,9 @@ export default function App() {
 
 	return (
 		<PersistGate persistor={persistor}>
-			<RoutesConfig />;
+			<AnimatePresence mode="wait">
+				<RoutesConfig />
+			</AnimatePresence>
 		</PersistGate>
 	);
 }

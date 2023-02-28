@@ -33,8 +33,12 @@ export const order = createModel<RootModel>()({
 				const data = await OrderRepository.createOrder(orderRequestPayload);
 				dispatch.order.addOrder(data);
 				dispatch.cart.clear();
-			} catch (e) {
-				console.log(e);
+				return true;
+			} catch (e: any) {
+				dispatch.error.setError({
+					message: "Unable to create order",
+				});
+				return false;
 			}
 		},
 	}),

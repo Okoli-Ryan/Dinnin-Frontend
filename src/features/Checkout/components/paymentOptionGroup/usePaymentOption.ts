@@ -30,12 +30,8 @@ export const usePaymentOption = () => {
 			paymentOption: paymentOption.value,
 		});
 
-		try {
-			await dispatch.order.createOrder(order);
-			navigate(`/${slug}/success`);
-		} catch (e) {
-			console.log(e);
-		}
+		const isCreated = await dispatch.order.createOrder(order);
+		isCreated && navigate(`/${slug}/success`);
 	}
 
 	return { handleOrderNote, handlePaymentOption, paymentOption, orderNote, createOrder, loading };

@@ -31,8 +31,10 @@ export const restaurant = createModel<RootModel>()({
 				const data = await RestaurantRepository.getRestaurantDetails(slug);
 				console.log("fetched");
 				dispatch.restaurant.set(data);
-			} catch (error) {
-				console.log(error);
+			} catch (e: any) {
+				dispatch.error.setError({
+					message: "Unable to get restaurant",
+				});
 			}
 		},
 	}),

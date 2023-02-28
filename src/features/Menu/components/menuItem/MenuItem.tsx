@@ -1,15 +1,26 @@
+import { motion } from "framer-motion";
+
 import FoodImage from "../../../../components/Image/FoodImage";
 import { ICartItem } from "../../../../domain/CartItem";
-import { IMenuItem as IMenuItemClass } from "../../../../domain/MenuItem";
 import { useMenuItem } from "./useMenuItem";
 
-interface IMenuItem extends IMenuItemClass {}
-
-export default function MenuItem(props: ICartItem) {
+export default function MenuItem(props: ICartItem & { index: number }) {
 	const { selectMenuItem, isSelected } = useMenuItem(props);
 
 	return (
-		<div
+		<motion.div
+			transition={{
+				delay: props.index * 0.1,
+				duration: 0.3,
+			}}
+			initial={{
+				x: "100vw",
+				opacity: 0,
+			}}
+			animate={{
+				x: 0,
+				opacity: 1,
+			}}
 			className={`flex justify-between px-4 gap-4 mb-2 border-b-[1px] py-3 ${
 				isSelected ? "bg-primary/10" : "bg-white"
 			}`}
@@ -29,6 +40,6 @@ export default function MenuItem(props: ICartItem) {
 					)}
 				</span> */}
 			</div>
-		</div>
+		</motion.div>
 	);
 }

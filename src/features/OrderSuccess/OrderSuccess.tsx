@@ -1,8 +1,9 @@
 import OrderSuccessImage from "../../assets/images/OrderSuccessImage.svg";
 import Button from "../../components/Button";
+import { withFadeIn } from "../../hoc/WithFadeIn";
 import { useOrderSuccess } from "./useOrderSuccess";
 
-export default function OrderSuccess() {
+const OrderSuccess = () => {
 	const { navigateToMenu } = useOrderSuccess();
 
 	return (
@@ -21,4 +22,6 @@ export default function OrderSuccess() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default withFadeIn(OrderSuccess);
