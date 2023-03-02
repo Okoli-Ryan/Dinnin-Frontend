@@ -1,3 +1,5 @@
+import { message } from "antd";
+
 import OrderSuccessImage from "../../assets/images/OrderSuccessImage.svg";
 import Button from "../../components/Button";
 import { withFadeIn } from "../../hoc/WithFadeIn";
@@ -18,7 +20,11 @@ const OrderSuccess = () => {
 					<Button className="text-sm" onClick={navigateToMenu}>
 						Place New Order
 					</Button>
-					<Button.Ghost className="text-sm">Request for a waiter</Button.Ghost>
+					<Button.Ghost
+						className="text-sm"
+						onClick={() => message.success("notification works")}>
+						Request for a waiter
+					</Button.Ghost>
 				</div>
 			</div>
 		</div>
