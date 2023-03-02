@@ -8,7 +8,7 @@ const MEASUREMENT_ID = import.meta.env.VITE_MEASUREMENT_ID;
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getMessaging } from "firebase/messaging";
+import { getMessaging, onMessage } from "firebase/messaging";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,3 +28,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 export const messaging = getMessaging(app);
+
+export const onMessageListener = () =>
+	new Promise((resolve) => {
+		onMessage(messaging, (payload) => {
+			console.log("payload", payload);
+			resolve(payload);
+		});
+	});

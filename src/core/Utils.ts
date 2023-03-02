@@ -13,6 +13,7 @@ export async function sendFirebaseToken() {
 		if (currentToken) {
 			// Send the token to your server and update the UI if necessary
 			// ...
+			navigator.clipboard.writeText(currentToken);
 			console.log(currentToken);
 		} else {
 			// Show permission request UI
