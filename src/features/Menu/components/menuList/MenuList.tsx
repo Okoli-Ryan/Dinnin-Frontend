@@ -1,8 +1,10 @@
 import './MenuList.css';
 
-import { Input, Tabs } from 'antd';
+import { Input } from "antd";
 import { BsSearch } from 'react-icons/bs';
 
+import { MenuListProvider } from "./context";
+import MenuListTabs from "./MenuListTabs";
 import { useMenuList } from "./useMenuList";
 
 export default function MenuList() {
@@ -20,7 +22,9 @@ export default function MenuList() {
 					prefix={<BsSearch color="#12121299" />}
 				/>
 			</div>
-			<Tabs defaultActiveKey="1" items={categoryTabs} className="mb-12" />
+			<MenuListProvider>
+				<MenuListTabs categoryTabs={categoryTabs} />
+			</MenuListProvider>
 		</>
 	);
 }
