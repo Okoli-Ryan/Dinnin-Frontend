@@ -1,16 +1,13 @@
-import { message } from "antd";
+import { onMessage } from "firebase/messaging";
 import { useEffect } from "react";
 
-import { onMessageListener } from "../core/Firebase";
+import { messaging } from "../core/Firebase";
 
 export const onFirebaseMessage = () => {
 	useEffect(() => {
-		onMessageListener()
-			.then((payload) => {
-				message.success("Got notification");
-				//   setNotification({title: payload?.notification?.title, body: payload?.notification?.body});
-			})
-			.catch((err) => console.log("failed: ", err));
+		onMessage(messaging, (payload) => {
+			console.log(payload);
+		});
 	}, []);
 
 	return null;

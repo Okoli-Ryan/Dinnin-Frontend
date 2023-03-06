@@ -1,4 +1,4 @@
-import { getToken } from "firebase/messaging";
+import { getToken, onMessage } from "firebase/messaging";
 import { decode } from "html-entities";
 
 import { messaging } from "./Firebase";
@@ -13,6 +13,9 @@ export async function sendFirebaseToken() {
 		if (currentToken) {
 			// Send the token to your server and update the UI if necessary
 			// ...
+			onMessage(messaging, (payload) => {
+				console.log("notification received", payload);
+			});
 			return currentToken;
 		} else {
 			// Show permission request UI
