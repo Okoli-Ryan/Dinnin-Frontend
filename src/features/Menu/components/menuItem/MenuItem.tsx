@@ -7,18 +7,6 @@ export default function MenuItem(props: ICartItem & { index: number }) {
 
 	return (
 		<div
-			// transition={{
-			// 	delay: props.index * 0.1,
-			// 	duration: 0.3,
-			// }}
-			// initial={{
-			// 	x: "100vw",
-			// 	opacity: 0,
-			// }}
-			// animate={{
-			// 	x: 0,
-			// 	opacity: 1,
-			// }}
 			className={`flex justify-between px-4 gap-4 mb-2 transition-colors duration-200 border-b-[1px] py-3 ${
 				isSelected ? "bg-primary/10" : "bg-white"
 			}`}

@@ -1,6 +1,7 @@
 import List from "../../../../components/List";
 import { useAppSelector } from "../../../../store";
 import CheckoutItem from "../checkoutItem";
+import CheckoutListFooter from "./CheckoutListFooter";
 import { ParseCheckoutList } from "./utils";
 
 export default function CheckoutList() {
@@ -8,13 +9,21 @@ export default function CheckoutList() {
 	const parsedCartItems = ParseCheckoutList(cartItems);
 
 	return (
-		<List
-			className="p-4 py-0 border-b-2"
-			data={parsedCartItems}
-			renderItem={([categoryName, menuItems], index) => (
-				<CheckoutItem index={index! + 1} category={categoryName} menuItems={menuItems} />
-			)}
-			header={<h3 className="font-bold text-lg pt-0">Your Order</h3>}
-		/>
+		<>
+			<List
+				className="p-4 py-0 border-b-2 checkout-list"
+				data={parsedCartItems}
+				renderItem={([categoryName, menuItems], index) => (
+					<CheckoutItem
+						index={index! + 1}
+						category={categoryName}
+						menuItems={menuItems}
+					/>
+				)}
+				header={<h3 className="font-bold text-lg pt-0">Your Order</h3>}
+				// footer={<CheckoutListFooter />}
+			/>
+			<CheckoutListFooter />
+		</>
 	);
 }

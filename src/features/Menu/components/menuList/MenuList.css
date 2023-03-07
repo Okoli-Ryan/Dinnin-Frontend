@@ -22,5 +22,5 @@
 }
 
 .ant-input {
-    @apply !pl-2 bg-[#F2F4F5]
+    @apply pl-2 bg-[#F2F4F5]
 }

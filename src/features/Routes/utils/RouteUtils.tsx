@@ -3,7 +3,6 @@ import { Route } from "react-router-dom";
 
 import Checkout from "../../Checkout";
 import Menu from "../../Menu";
-import OrderSuccess from "../../OrderSuccess";
 
 const loadModules = (link: string) => lazy(() => import(/* @vite-ignore */ `../../${link}`));
 
@@ -37,9 +36,5 @@ export const AppRoutes: Array<IAppRoute> = [
 	{
 		Component: <Menu />,
 		path: "/menu",
-	},
-	{
-		Component: <OrderSuccess />,
-		path: "/success",
 	},
 ];

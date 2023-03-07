@@ -8,6 +8,7 @@ export interface IOrder {
 	paymentOption: IPaymentOption["value"];
 	orderItems: ICartItem[];
 	restaurantId: string;
+	discountCode?: string;
 }
 
 export class Order {
@@ -16,6 +17,7 @@ export class Order {
 	orderItems: ICartItem[];
 	tableId?: string;
 	userId?: string;
+	discountCode?: string;
 	restaurantId: string;
 
 	constructor(props: IOrder) {
@@ -25,5 +27,6 @@ export class Order {
 		this.orderNote = props.orderNote;
 		this.paymentOption = props.paymentOption;
 		this.restaurantId = props.restaurantId;
+		this.discountCode = props.discountCode;
 	}
 }

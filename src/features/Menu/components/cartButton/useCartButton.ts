@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import { useAppSelector } from "../../../../store";
 
 export const useCartButton = () => {
-	const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+	const { state } = useLocation();
+	const [isCartModalOpen, setIsCartModalOpen] = useState(state.showCart);
 
 	const cartItems = useAppSelector((state) => state.cart);
 	const cartItemsCount = Object.keys(cartItems).length;
