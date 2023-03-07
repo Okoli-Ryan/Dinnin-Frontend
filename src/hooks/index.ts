@@ -1,1 +1,1 @@
-export * from "./OnFirebaseMessage";
+export * from "./usePushNotification";

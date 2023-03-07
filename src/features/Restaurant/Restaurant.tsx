@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 
 import LoadingScreen from "../../components/LoadingScreen";
-import { onFirebaseMessage } from "../../hooks";
+import { initiatePushNotification } from "../../services/PushNotification";
 import { useRestaurant } from "./useRestaurant";
 
 export default function Restaurant() {
 	const { loading } = useRestaurant();
-	onFirebaseMessage();
+	initiatePushNotification();
 
 	if (loading) return <LoadingScreen caption="Loading menu..." />;
 	return <Outlet />;

@@ -3,12 +3,10 @@ import { message } from "antd";
 import OrderSuccessImage from "../../assets/images/OrderSuccessImage.svg";
 import Button from "../../components/Button";
 import { withFadeIn } from "../../hoc/WithFadeIn";
-import { onFirebaseMessage } from "../../hooks";
 import { useOrderSuccess } from "./useOrderSuccess";
 
 const OrderSuccess = () => {
 	const { navigateToMenu, currToken } = useOrderSuccess();
-	onFirebaseMessage();
 
 	return (
 		<div className="flex items-center justify-center w-screen h-screen">
