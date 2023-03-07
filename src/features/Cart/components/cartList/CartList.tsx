@@ -1,17 +1,23 @@
 import List from '../../../../components/List';
-import { useAppSelector } from "../../../../store";
+import CartDeleteModal from "../cartDeleteModal";
 import CartItem from "../cartItem";
+import { CartListProvider } from "./context";
+import { useCartList } from "./useCartList";
 
 export default function CartList() {
+	const { cartItems, setShowDeleteModal, showDeleteModal } = useCartList();
 
-    const cart = useAppSelector((state) => state.cart);
-	const cartItems = Object.values(cart);
-
+	//Use context here for deleting cart id
 	return (
-		<List
-			data={cartItems}
-			renderItem={(cartItem) => <CartItem {...cartItem} />}
-			header={<h3 className="mx-4 font-bold text-lg">Items</h3>}
-		/>
+		<CartListProvider>
+			<>
+				<List
+					data={cartItems}
+					renderItem={(cartItem) => <CartItem {...cartItem} />}
+					header={<h3 className="mx-4 font-bold text-lg">Items</h3>}
+				/>
+				<CartDeleteModal />
+			</>
+		</CartListProvider>
 	);
 }

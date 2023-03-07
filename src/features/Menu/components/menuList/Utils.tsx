@@ -21,14 +21,12 @@ export const ParseMenuCategories = (categories: IMenuCategory[]) =>
 						)}
 					/>
 				),
-				label: (
-					<Label categoryName={category.categoryName} count={category.menuItems.length} />
-				),
+				label: <Label categoryName={category.categoryName} />,
 				key: category.id,
 			})
 	);
 
-const Label = ({ categoryName, count }: { categoryName: string; count: number }) => {
+const Label = ({ categoryName }: { categoryName: string }) => {
 	const cart = useAppSelector((state) => state.cart);
 	const cartItems = Object.values(cart);
 
@@ -36,9 +34,7 @@ const Label = ({ categoryName, count }: { categoryName: string; count: number })
 
 	return (
 		<span className="relative">
-			<span>
-				{categoryName} ({count})
-			</span>
+			<span>{categoryName}</span>
 			{hasItem && (
 				<div className="absolute z-10 w-2 h-2 rounded-full bg-primary -top-1 -right-2"></div>
 			)}

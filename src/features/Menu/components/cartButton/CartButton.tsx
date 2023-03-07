@@ -18,17 +18,17 @@ export default function CartButton() {
 					size="large"
 					disabled={isDisabled}
 					onClick={showCartModal}
-					className=" text-white bg-[#E3E5E5] font-semibold"
+					className=" text-white bg-[#F2F4F5] font-semibold disabled:bg-[#F2F4F5] border-0"
 					type="primary"
 					icon={
 						<>
 							<span className="top-[10px] left-5 absolute">
-								<BsFillCartFill color="white" size={18} />
+								<BsFillCartFill color={isDisabled ? "#CCC" : "#FFF"} size={18} />
 							</span>
 							<span className="top-[10px] right-5 absolute">
 								<p
 									className={`w-5 h-5 rounded-full ${
-										isDisabled ? "bg-gray-100" : "bg-primary/70"
+										isDisabled ? "bg-[#CCC]" : "bg-primary/70"
 									} text-xs flex justify-center items-center`}>
 									{cartItemsCount}
 								</p>

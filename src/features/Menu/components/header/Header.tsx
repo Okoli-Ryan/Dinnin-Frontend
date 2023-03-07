@@ -1,5 +1,8 @@
-import Hero from "../../../../assets/images/Hero.png";
-import { useAppSelector } from "../../../../store";
+import { AiFillStar } from 'react-icons/ai';
+import { BsDot } from 'react-icons/bs';
+
+import Hero from '../../../../assets/images/Hero.png';
+import { useAppSelector } from '../../../../store';
 
 export default function Header() {
 	const { address, logoUrl, city, state, restaurantName } = useAppSelector(
@@ -17,20 +20,20 @@ export default function Header() {
 				/>
 			</div>
 			<div className="flex flex-col mt-6 p-4 pb-0 gap-1">
-				<h4 className=" font-bold">{restaurantName}</h4>
-				{/* <p className="flex space-x-2 items-center">
+				<h4 className=" font-bold uppercase">{restaurantName}</h4>
+				<p className="flex space-x-2 items-center">
 					<AiFillStar className="" />
 					<span className="text-sm">4.2</span>
 					<span className="text-[#F2003C] text-sm">(252)</span>
-				</p> */}
+				</p>
 				<p className="text-sm">
 					{city}, {state}
 				</p>
-				{/* <p className="flex items-center">
+				<p className="flex items-center">
 					<span className="text-[#37863E] font-bold text-sm">Open now</span>
 					<BsDot className="text-[#12121299]" size={18} />
 					<span className="font-light text-sm">Closes at 8:00 PM</span>
-				</p> */}
+				</p>
 			</div>
 		</div>
 	);

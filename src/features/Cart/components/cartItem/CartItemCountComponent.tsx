@@ -2,6 +2,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { IoMdTrash } from "react-icons/io";
 
 import { dispatch, useAppSelector } from "../../../../store";
+import { useCartListContext } from "../cartList/context";
 
 export default function CartItemCountComponent({ id }: { id: string }) {
 	const { quantity, increaseQuantity, decreaseQuantity, removeCartItem } =
@@ -29,6 +30,7 @@ const useCartItemCountComponent = (id: string) => {
 	const cart = useAppSelector((state) => state.cart);
 	const cartItem = cart[id];
 	const quantity = cartItem.quantity;
+	const { setDeleteItemId } = useCartListContext();
 
 	function increaseQuantity() {
 		dispatch.cart.increaseQuantity(id);
@@ -38,7 +40,8 @@ const useCartItemCountComponent = (id: string) => {
 		dispatch.cart.decreaseQuantity(id);
 	}
 	function removeCartItem() {
-		dispatch.cart.removeCartItem(id);
+		// dispatch.cart.removeCartItem(id);
+		setDeleteItemId(id);
 	}
 
 	return { quantity, increaseQuantity, decreaseQuantity, removeCartItem };
