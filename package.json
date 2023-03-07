@@ -10,6 +10,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@pusher/push-notifications-web": "^1.1.0",
 		"@rematch/core": "^2.2.0",
 		"@rematch/loading": "^2.1.2",
 		"@rematch/persist": "^2.1.2",
@@ -27,6 +28,7 @@
 		"react-optimized-image": "^0.4.1",
 		"react-redux": "^8.0.5",
 		"react-router-dom": "^6.8.1",
+		"react-spring-bottom-sheet": "^3.4.1",
 		"redux": "^4.2.1",
 		"vite-plugin-dynamic-import": "^1.2.7"
 	},

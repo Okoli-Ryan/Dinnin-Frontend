@@ -7,7 +7,7 @@ const beamsClient = new PusherPushNotifications.Client({
 function initiatePushNotification() {
 	beamsClient
 		.start()
-		.then((payload) => console.log(payload))
+		.then((payload: any) => console.log(payload))
 		.then(() => beamsClient.addDeviceInterest("hello"))
 		.then(() => console.log("Successfully registered and subscribed!"))
 		.catch(console.error);
