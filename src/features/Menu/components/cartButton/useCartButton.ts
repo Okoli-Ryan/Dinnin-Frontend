@@ -5,7 +5,7 @@ import { useAppSelector } from "../../../../store";
 
 export const useCartButton = () => {
 	const { state } = useLocation();
-	const [isCartModalOpen, setIsCartModalOpen] = useState(state.showCart);
+	const [isCartModalOpen, setIsCartModalOpen] = useState(state?.showCart || false);
 
 	const cartItems = useAppSelector((state) => state.cart);
 	const cartItemsCount = Object.keys(cartItems).length;

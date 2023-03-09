@@ -6,7 +6,7 @@ import { withFadeIn } from "../../hoc/WithFadeIn";
 import { useOrderSuccess } from "./useOrderSuccess";
 
 const OrderSuccess = () => {
-	const { navigateToMenu, currToken } = useOrderSuccess();
+	const { navigateToMenu } = useOrderSuccess();
 
 	return (
 		<div className="flex items-center justify-center w-screen h-screen">
@@ -15,7 +15,6 @@ const OrderSuccess = () => {
 				<p className="mt-8 text-sm text-center text-text_primary">
 					We are working on getting your order to you on time. Kindly hold on.
 				</p>
-				<p className="w-3/4 text-center">{currToken}</p>
 				<div className="flex flex-col gap-2 mt-8">
 					<Button className="text-sm" onClick={navigateToMenu}>
 						Place New Order
