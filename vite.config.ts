@@ -8,4 +8,19 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
 	plugins: [react(), mkcert()],
 	server: { https: true },
+	build: {
+		rollupOptions: {
+			input: {
+				main: "./index.html",
+			},
+			output: {
+				manualChunks: {
+					"service-worker": ["./public/service-worker.js"],
+				},
+			},
+		},
+	},
+	optimizeDeps: {
+		exclude: ["service-worker"],
+	},
 });
