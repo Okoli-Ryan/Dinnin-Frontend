@@ -7,7 +7,7 @@ export default function CheckoutListFooter() {
 	const { slug } = useParams();
 
 	function navigateToAddMore() {
-		navigate(`/${slug}/menu`, {
+		navigate(`/${slug}`, {
 			state: {
 				showCart: true,
 			},

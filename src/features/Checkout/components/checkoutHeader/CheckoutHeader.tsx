@@ -6,7 +6,7 @@ export default function CheckoutHeader() {
 	const { slug } = useParams();
 
 	function goBack() {
-		navigate(`/${slug}/menu`, {
+		navigate(`/${slug}`, {
 			state: {
 				showCart: false,
 			},

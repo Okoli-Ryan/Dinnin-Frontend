@@ -1,6 +1,6 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from 'react-router-dom';
 
-import { initiatePushNotification } from "../../services/PushNotification";
+import { initiatePushNotification } from '../../services/PushNotification';
 
 export const useOrderSuccess = () => {
 	const navigate = useNavigate();
@@ -9,7 +9,7 @@ export const useOrderSuccess = () => {
 	initiatePushNotification();
 
 	const navigateToMenu = () => {
-		navigate(`/${slug}/menu`);
+		navigate(`/${slug}`);
 	};
 
 	return { navigateToMenu };
