@@ -7,7 +7,7 @@ export default function MenuItem(props: ICartItem & { index: number }) {
 
 	return (
 		<div
-			className={`flex justify-between px-4 gap-4 mb-2 transition-colors duration-200 border-b-[1px] py-3 ${
+			className={`flex justify-between px-4 gap-8 mb-2 transition-colors duration-200 border-b-[1px] py-3 ${
 				isSelected ? "bg-primary/10" : "bg-white"
 			}`}
 			onClick={selectMenuItem}>
