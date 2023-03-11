@@ -1,9 +1,10 @@
-import { Fragment } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Fragment } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
-import OrderSuccess from "../OrderSuccess";
-import Restaurant from "../Restaurant";
-import { AppRoutes, generateRoutes } from "./utils";
+import OrderSuccess from '../OrderSuccess';
+import Restaurant from '../Restaurant';
+import Route404 from '../Route404';
+import { AppRoutes, generateRoutes } from './utils';
 
 export default function RoutesConfig() {
 	const { pathname } = useLocation();
@@ -16,6 +17,7 @@ export default function RoutesConfig() {
 				))}
 			</Route>
 			<Route path="/:slug/:orderId" element={<OrderSuccess />} />
+            <Route path='*' element={<Route404 />}/>
 		</Routes>
 	);
 }
