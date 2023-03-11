@@ -16,8 +16,8 @@ export default function RoutesConfig() {
 					<Fragment key={i}>{generateRoutes(route, i, "/:slug")}</Fragment>
 				))}
 			</Route>
-			<Route path="/:slug/:orderId" element={<OrderSuccess />} />
-            <Route path='*' element={<Route404 />}/>
+			<Route path="/:slug/status/:orderId" element={<OrderSuccess />} />
+			<Route path="*" element={<Route404 />} />
 		</Routes>
 	);
 }

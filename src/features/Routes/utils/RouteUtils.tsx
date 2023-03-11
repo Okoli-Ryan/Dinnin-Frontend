@@ -35,6 +35,6 @@ export const AppRoutes: Array<IAppRoute> = [
 	},
 	{
 		Component: <Menu />,
-		path: "/menu",
+		path: "/",
 	},
 ];

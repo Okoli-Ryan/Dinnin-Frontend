@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { dispatch } from "../../store";
+import { dispatch } from '../../store';
 
 export const useRestaurant = () => {
 	const { slug = "" } = useParams();
