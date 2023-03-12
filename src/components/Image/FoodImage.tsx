@@ -7,9 +7,8 @@ interface IFoodImage {
 
 export default function FoodImage({ src, className = "" }: IFoodImage) {
 	return (
-		<img
-			src={src || DefaultFoodImage}
-			className={`object-contain max-w-[4rem]  ${className}`}
-		/>
+		<div className={`flex max-h-[6rem] max-w-[4rem] justify-end  ${className}`}>
+			<img src={src || DefaultFoodImage} className={`object-contain h-full w-auto`} />
+		</div>
 	);
 }

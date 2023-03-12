@@ -7,11 +7,11 @@ export default function MenuItem(props: ICartItem & { index: number }) {
 
 	return (
 		<div
-			className={`flex justify-between px-4 gap-8 mb-2 transition-colors duration-200 border-b-[1px] py-3 ${
+			className={`flex justify-between px-4 mb-2 transition-colors duration-200 border-b-[1px] py-3 ${
 				isSelected ? "bg-primary/10" : "bg-white"
 			}`}
 			onClick={selectMenuItem}>
-			<div className="flex flex-col gap-1 ">
+			<div className="flex flex-col gap-1 w-3/5">
 				<h5 className="font-bold">{props.menuItemName}</h5>
 				<p className="text-sm text-text_primary">{props.description}</p>
 				<p className="font-bold mt-2">NGN {props.price}</p>
