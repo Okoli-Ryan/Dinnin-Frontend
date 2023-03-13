@@ -1,7 +1,7 @@
 import { AiFillStar } from 'react-icons/ai';
 import { BsDot } from 'react-icons/bs';
 
-import Hero from '../../../../assets/images/Hero.png';
+import { HeaderImage } from "../../../../core/Constants";
 import { useAppSelector } from '../../../../store';
 
 export default function Header() {
@@ -12,7 +12,7 @@ export default function Header() {
 	return (
 		<div className="relative">
 			<div className="relative">
-				<img src={Hero} className="h-40 w-full object-cover" alt="hero image" />
+				<img src={HeaderImage} className="h-40 w-full object-cover" alt="hero image" />
 				<img
 					src={logoUrl}
 					className="w-20 h-20 rounded-full absolute -bottom-10 left-4"

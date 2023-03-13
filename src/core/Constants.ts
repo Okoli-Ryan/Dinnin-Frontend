@@ -11,4 +11,4 @@ export const PAYMENT_OPTIONS = [
 	{ value: "POS", label: "POS" },
 ];
 
-const a = 1;
+export const HeaderImage = "https://res.cloudinary.com/okoliryan50/image/upload/v1678697547/Orderup/static/Hero_ygld8c.png"
