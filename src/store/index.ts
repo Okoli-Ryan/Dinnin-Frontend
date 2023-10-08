@@ -1,5 +1,6 @@
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import storage from "redux-persist/lib/storage";
+import sessionStorage from "redux-persist/lib/storage/session";
 
 import { init, RematchRootState } from "@rematch/core";
 import loadingPlugin, { ExtraModelsFromLoading } from "@rematch/loading";
@@ -19,9 +20,15 @@ const persistConfig = {
 	whitelist: ["order", "cart"],
 };
 
+const sessionPersistPlugin = {
+	key: siteSlug,
+	storage: sessionStorage,
+	whitelist: ["table"],
+};
+
 const store = init<RootModel, FullModel>({
 	models: models,
-	plugins: [loadingPlugin(), persistPlugin(persistConfig)],
+	plugins: [loadingPlugin(), persistPlugin(persistConfig), persistPlugin(sessionPersistPlugin)],
 });
 
 export const { dispatch, getState } = store;

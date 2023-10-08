@@ -3,7 +3,7 @@ import { useState } from "react";
 import { CheckoutContext } from "./CheckoutContext";
 
 interface ICheckoutProvider {
-	children: JSX.Element;
+	children: React.ReactNode;
 }
 
 export const CheckoutProvider = ({ children }: ICheckoutProvider) => {
@@ -13,9 +13,5 @@ export const CheckoutProvider = ({ children }: ICheckoutProvider) => {
 		setDiscountCode(e);
 	}
 
-	return (
-		<CheckoutContext.Provider value={{ discountCode, changeDiscountCode }}>
-			{children}
-		</CheckoutContext.Provider>
-	);
+	return <CheckoutContext.Provider value={{ discountCode, changeDiscountCode }}>{children}</CheckoutContext.Provider>;
 };

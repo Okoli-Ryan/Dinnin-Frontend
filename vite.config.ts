@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react(), mkcert()],
-	server: { https: true },
+	server: { https: true, port: 5001 },
 	build: {
 		rollupOptions: {
 			input: {

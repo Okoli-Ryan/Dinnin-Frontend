@@ -14,11 +14,9 @@ const Checkout = () => {
 			<CheckoutHeader />
 			<AppAdvert />
 			<CheckoutProvider>
-				<>
-					<CheckoutList />
-					<CheckoutPriceSummary />
-					<PaymentOption />
-				</>
+				<CheckoutList />
+				<CheckoutPriceSummary />
+				<PaymentOption />
 			</CheckoutProvider>
 		</>
 	);

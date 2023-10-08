@@ -1,6 +1,7 @@
-import { lazy, ReactElement } from "react";
+import { lazy, ReactElement, Suspense } from "react";
 import { Route } from "react-router-dom";
 
+import LoadingScreen from "../../../components/LoadingScreen";
 import Checkout from "../../Checkout";
 import Menu from "../../Menu";
 
@@ -15,11 +16,7 @@ export const generateRoutes = (
 		<Route
 			key={i}
 			path={prefix + path}
-			element={
-				// <Suspense fallback={<LoadingScreen />}>
-				Component
-				// </Suspense>
-			}
+			element={<Suspense fallback={<LoadingScreen />}>{Component}</Suspense>}
 		/>
 	);
 };

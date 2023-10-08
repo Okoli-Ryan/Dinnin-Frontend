@@ -23,9 +23,8 @@ export class MenuItem extends BaseModel {
 		this.menuCategoryId = props?.menuCategoryId;
 		this.restaurantId = props.restaurantId;
 		this.imageUrl = props.imageUrl || DummyFoodImage;
-		this.description =
-			props.description || "Random food quote random food quote Random food quote";
-		this.price = props.price || 69.69;
+		this.description = props.description || "Random food quote random food quote Random food quote";
+		this.price = props.price || 0;
 		this.menuItemName = props.menuItemName || "Random Food name";
 	}
 }

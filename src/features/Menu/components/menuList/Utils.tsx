@@ -12,12 +12,7 @@ export const ParseMenuCategories = (categories: IMenuCategory[]) =>
 					<List
 						data={category.menuItems}
 						renderItem={(item, index) => (
-							<MenuItem
-								{...item}
-								quantity={1}
-								categoryName={category.categoryName}
-								index={index!}
-							/>
+							<MenuItem {...item} itemPrice={item.price} quantity={1} categoryName={category.categoryName} index={index!} />
 						)}
 					/>
 				),
@@ -35,9 +30,7 @@ const Label = ({ categoryName }: { categoryName: string }) => {
 	return (
 		<span className="relative">
 			<span>{categoryName}</span>
-			{hasItem && (
-				<div className="absolute z-10 w-2 h-2 rounded-full bg-primary -top-1 -right-2"></div>
-			)}
+			{hasItem && <div className="absolute z-10 w-2 h-2 rounded-full bg-primary -top-1 -right-2"></div>}
 		</span>
 	);
 };
@@ -46,9 +39,7 @@ export const filterCategories = (searchValue: string, categories: IMenuCategory[
 	const newCategories = categories
 		.map((category) => ({
 			...category,
-			menuItems: category.menuItems.filter((item) =>
-				item.menuItemName.toLowerCase().includes(searchValue.toLowerCase())
-			),
+			menuItems: category.menuItems.filter((item) => item.menuItemName.toLowerCase().includes(searchValue.toLowerCase())),
 		}))
 		.filter((category) => category.menuItems.length > 0);
 

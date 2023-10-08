@@ -1,4 +1,6 @@
-export const BASE_URL = import.meta.env.VITE_BASE_URL;
+export const BASE_URL = import.meta.env.DEV
+	? import.meta.env.VITE_DEV_URL
+	: import.meta.env.VITE_BASE_URL;
 export const X_API_KEY = import.meta.env.VITE_API_KEY;
 
 export interface IPaymentOption {
@@ -11,4 +13,5 @@ export const PAYMENT_OPTIONS = [
 	{ value: "POS", label: "POS" },
 ];
 
-export const HeaderImage = "https://res.cloudinary.com/okoliryan50/image/upload/v1678697547/Orderup/static/Hero_ygld8c.png"
+export const HeaderImage =
+	"https://res.cloudinary.com/okoliryan50/image/upload/v1678697547/Orderup/static/Hero_ygld8c.png";

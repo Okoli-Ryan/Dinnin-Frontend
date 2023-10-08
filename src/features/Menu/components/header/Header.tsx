@@ -13,13 +13,9 @@ export default function Header() {
 		<div className="relative">
 			<div className="relative">
 				<img src={HeaderImage} className="h-40 w-full object-cover" alt="hero image" />
-				<img
-					src={logoUrl}
-					className="w-20 h-20 rounded-full absolute -bottom-10 left-4"
-					alt="restaurant logo"
-				/>
+				{logoUrl && <img src={logoUrl} className="w-20 h-20 rounded-full absolute -bottom-10 left-4" alt="restaurant logo" />}
 			</div>
-			<div className="flex flex-col mt-6 p-4 pb-0 gap-1">
+			<div className={`flex flex-col ${logoUrl ? "mt-6" : "mt-0"} p-4 pb-0 gap-1`}>
 				<h4 className=" font-bold uppercase">{restaurantName}</h4>
 				<p className="flex space-x-2 items-center">
 					<AiFillStar className="" />

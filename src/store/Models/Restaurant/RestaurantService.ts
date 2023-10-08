@@ -6,11 +6,6 @@ import { RestaurantRepository } from "./RestaurantRepository";
 
 const initState = {} as IRestaurant;
 
-type IGetRestaurantPayload = {
-	slug: string;
-	tableId?: string;
-};
-
 export const restaurant = createModel<RootModel>()({
 	state: initState,
 	reducers: {
@@ -22,14 +17,9 @@ export const restaurant = createModel<RootModel>()({
 		},
 	},
 	effects: (dispatch) => ({
-		async getRestaurant(payload: IGetRestaurantPayload, rootState) {
-			const { slug } = payload;
-
-			console.log(payload);
-
+		async getRestaurant(slug, rootState) {
 			try {
 				const data = await RestaurantRepository.getRestaurantDetails(slug);
-				console.log("fetched");
 				dispatch.restaurant.set(data);
 			} catch (e: any) {
 				dispatch.error.setError({

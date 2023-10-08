@@ -13,6 +13,7 @@ export const usePaymentOption = () => {
 	const cart = useAppSelector((state) => state.cart);
 	const loading = useAppSelector((state) => state.loading.models.order);
 	const restaurantId = useAppSelector((state) => state.restaurant.id);
+	const tableId = useAppSelector((state) => state.table.id);
 
 	const { discountCode } = useCheckoutContext();
 
@@ -34,10 +35,11 @@ export const usePaymentOption = () => {
 			orderItems: Object.values(cart),
 			paymentOption: paymentOption.value,
 			discountCode,
+			tableId,
 		});
 
-		const isCreated = await dispatch.order.createOrder(order);
-		isCreated && navigate(`/${slug}/status/success`);
+		const orderId = await dispatch.order.createOrder(order);
+		orderId && navigate(`/${slug}/status/${orderId}`, { state: { success: true } });
 	}
 
 	return { handleOrderNote, handlePaymentOption, paymentOption, orderNote, createOrder, loading };

@@ -44,27 +44,18 @@ type IOptions = AxiosRequestHeaders & { fullPath?: string };
 export default axios;
 
 export const api = {
-	post: async (url: string, data?: any, options?: IOptions) =>
-		axios.post(options?.fullPath ? url : BASE_URL + url, data, options && { headers: options }),
-	patch: async (url: string, data?: any, options?: IOptions) =>
-		axios.patch(
-			options?.fullPath ? url : BASE_URL + url,
-			data,
-			options && { headers: options }
-		),
-	put: async (url: string, data?: any, options?: IOptions) =>
-		axios.put(options?.fullPath ? url : BASE_URL + url, data, options && { headers: options }),
+	post: async <T>(url: string, data?: any, options?: IOptions): Promise<T> => {
+		return axios.post(options?.fullPath ? url : BASE_URL + url, data, options && { headers: options });
+	},
+	patch: async (url: string, data?: any, options?: IOptions) => axios.patch(options?.fullPath ? url : BASE_URL + url, data, options && { headers: options }),
+	put: async (url: string, data?: any, options?: IOptions) => axios.put(options?.fullPath ? url : BASE_URL + url, data, options && { headers: options }),
 	delete: async (url: string, data: any, options: IOptions) => {
 		data = data ? (data instanceof Object && !Object.keys(data).length ? null : data) : null;
 		const config = data ? { headers: options, data } : { headers: options };
 		return axios.delete(options?.fullPath ? url : BASE_URL + url, config);
 	},
 	get: async (url: string, params: any = {}, options?: IOptions) => {
-		params = params
-			? params instanceof Object && !Object.keys(params).length
-				? null
-				: params
-			: null;
+		params = params ? (params instanceof Object && !Object.keys(params).length ? null : params) : null;
 		// const config = params ? { headers: options, params } : { headers: options };
 		const config = {
 			headers: options,
