@@ -12,3 +12,5 @@ export const useMenuItem = (menuItem: ICartItem) => {
 
 	return { isSelected, selectMenuItem };
 };
+
+// Configure back buttons to correct routes
